@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function dispArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+            if (i % 10 === 9) {
+                document.write("<br>");
+            }
+        }
+    }
+
+
+    function count(arr,value) {
+        let count = 0;
+        for(let i=0; i<arr.length;i++){
+            if (arr[i] === value)
+                count++;
+        }
+        return count;
+    }
+
+    let nums = [];
+    for (let i = 0; i < 100; ++i)
+        nums[i] = Math.floor(Math.random() * 101);
+    let nums1 = (nums.sort(function (a,b){return(a-b)}));
+    dispArr(nums1);
+    document.write("<br/>");
+        let val = parseInt(prompt("Enter a value to count: "));
+    let retVal = count(nums, val);
+    if(retVal>0) {
+        document.write("Tim thay " + retVal + " lan so " + val);
+    }
+    else
+        document.write("khong tim thay so " + val)
+</script>
+</body>
+</html>
